@@ -2,17 +2,20 @@ package com.nitesh.study.theory.sequences;
 
 public class StaticArray {
 
-    private int static_array[];
-    private int size;
+    protected int static_array[];
+    protected int size;
+    protected int count;
 
     StaticArray(int size) {
         this.size = size;
+        this.count = 0;
         this.static_array = new int[size];
     }
 
     public void build(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             this.static_array[i] = arr[i];
+            count ++;
         }
     }
 
