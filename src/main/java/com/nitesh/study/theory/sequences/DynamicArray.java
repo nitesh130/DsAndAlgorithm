@@ -6,7 +6,7 @@ public class DynamicArray extends StaticArray {
         super(size);
     }
 
-    public void build(int arr[]) {
+    public void build(int[] arr) {
         if (arr.length > size) {
             throw new IllegalStateException("input array size is greater than size of the array");
         }
@@ -17,9 +17,7 @@ public class DynamicArray extends StaticArray {
         if (count == size) {
             size = 2 * size;
             int[] temp = new int[size];
-            for (int i = 0; i < static_array.length; i++) {
-                temp[i] = static_array[i];
-            }
+            System.arraycopy(static_array, 0, temp, 0, static_array.length);
             static_array = temp;
         }
     }
